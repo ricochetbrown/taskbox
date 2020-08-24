@@ -11,7 +11,8 @@
     "docs:json": "compodoc -p ./tsconfig.base.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook",
-    "jest": "jest --watch"
+    "jest": "jest --watch",
+    "chromatic": "npx chromatic --project-token yjsxrvl6wyi"
   },
   "private": true,
   "dependencies": {
