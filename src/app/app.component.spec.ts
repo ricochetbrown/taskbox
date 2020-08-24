@@ -1,31 +1,26 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { moduleMetadata } from '@storybook/angular';
+import { PureInboxScreenComponent } from './pure-inbox-screen.component';
+import { TaskModule } from './task.module';
+import { Store, NgxsModule } from '@ngxs/store';
+import { TasksState } from '../state/task.state';
+export default {
+  title: 'PureInboxScreen',
+  decorators: [
+    moduleMetadata({
+      imports: [TaskModule, NgxsModule.forRoot([TasksState])],
+      providers: [Store],
+    }),
+  ],
+};
+// inbox screen default state
+export const Default = () => ({
+  component: PureInboxScreenComponent,
+});
 
-describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  }));
-
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'taskbox'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('taskbox');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('taskbox app is running!');
-  });
+// inbox screen error state
+export const error = () => ({
+  component: PureInboxScreenComponent,
+  props: {
+    error: true,
+  },
 });
