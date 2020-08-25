@@ -962,7 +962,7 @@
         },
         {
             "name": "TaskComponent",
-            "id": "component-TaskComponent-e3965ad82103f1478976e869b64a24b8",
+            "id": "component-TaskComponent-cb6290ed26f0a752b21602f40a9f2bfb",
             "file": "src/app/components/task.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -972,7 +972,7 @@
             "selector": "app-task",
             "styleUrls": [],
             "styles": [],
-            "template": "<div class=\"list-item {{ task?.state }}\">\n  <label class=\"checkbox\">\n    <input\n      type=\"checkbox\"\n      [defaultChecked]=\"task?.state === 'TASK_ARCHIVED'\"\n      disabled=\"true\"\n      name=\"checked\"\n    />\n    <span class=\"checkbox-custom\" (click)=\"onArchive(task.id)\"></span>\n  </label>\n  <div class=\"title\" style=\"background: red\">\n    <input type=\"text\" [value]=\"task?.title\" readonly=\"true\" placeholder=\"Input title\" />\n  </div>\n  <div class=\"actions\">\n    <a *ngIf=\"task?.state !== 'TASK_ARCHIVED'\" (click)=\"onPin(task.id)\">\n      <span class=\"icon-star\"></span>\n    </a>\n  </div>\n</div>\n",
+            "template": "<div class=\"list-item {{ task?.state }}\">\n  <label class=\"checkbox\">\n    <input\n      type=\"checkbox\"\n      [defaultChecked]=\"task?.state === 'TASK_ARCHIVED'\"\n      disabled=\"true\"\n      name=\"checked\"\n    />\n    <span class=\"checkbox-custom\" (click)=\"onArchive(task.id)\"></span>\n  </label>\n  <div class=\"title\">\n    <input type=\"text\" [value]=\"task?.title\" readonly=\"true\" placeholder=\"Input title\" />\n  </div>\n  <div class=\"actions\">\n    <a *ngIf=\"task?.state !== 'TASK_ARCHIVED'\" (click)=\"onPin(task.id)\">\n      <span class=\"icon-star\"></span>\n    </a>\n  </div>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
@@ -1064,7 +1064,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Task } from '../models/task.model';\r\n@Component({\r\n  selector: 'app-task',\r\n  template: `\r\n    <div class=\"list-item {{ task?.state }}\">\r\n      <label class=\"checkbox\">\r\n        <input\r\n          type=\"checkbox\"\r\n          [defaultChecked]=\"task?.state === 'TASK_ARCHIVED'\"\r\n          disabled=\"true\"\r\n          name=\"checked\"\r\n        />\r\n        <span class=\"checkbox-custom\" (click)=\"onArchive(task.id)\"></span>\r\n      </label>\r\n      <div class=\"title\" style=\"background: red\">\r\n        <input type=\"text\" [value]=\"task?.title\" readonly=\"true\" placeholder=\"Input title\" />\r\n      </div>\r\n      <div class=\"actions\">\r\n        <a *ngIf=\"task?.state !== 'TASK_ARCHIVED'\" (click)=\"onPin(task.id)\">\r\n          <span class=\"icon-star\"></span>\r\n        </a>\r\n      </div>\r\n    </div>\r\n  `,\r\n})\r\nexport class TaskComponent implements OnInit {\r\n  title: string;\r\n  @Input() task: Task;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onPinTask: EventEmitter<any> = new EventEmitter();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onArchiveTask: EventEmitter<any> = new EventEmitter();\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit() {}\r\n\r\n  onPin(id: any) {\r\n    this.onPinTask.emit(id);\r\n  }\r\n  onArchive(id: any) {\r\n    this.onArchiveTask.emit(id);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Task } from '../models/task.model';\r\n@Component({\r\n  selector: 'app-task',\r\n  template: `\r\n    <div class=\"list-item {{ task?.state }}\">\r\n      <label class=\"checkbox\">\r\n        <input\r\n          type=\"checkbox\"\r\n          [defaultChecked]=\"task?.state === 'TASK_ARCHIVED'\"\r\n          disabled=\"true\"\r\n          name=\"checked\"\r\n        />\r\n        <span class=\"checkbox-custom\" (click)=\"onArchive(task.id)\"></span>\r\n      </label>\r\n      <div class=\"title\">\r\n        <input type=\"text\" [value]=\"task?.title\" readonly=\"true\" placeholder=\"Input title\" />\r\n      </div>\r\n      <div class=\"actions\">\r\n        <a *ngIf=\"task?.state !== 'TASK_ARCHIVED'\" (click)=\"onPin(task.id)\">\r\n          <span class=\"icon-star\"></span>\r\n        </a>\r\n      </div>\r\n    </div>\r\n  `,\r\n})\r\nexport class TaskComponent implements OnInit {\r\n  title: string;\r\n  @Input() task: Task;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onPinTask: EventEmitter<any> = new EventEmitter();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onArchiveTask: EventEmitter<any> = new EventEmitter();\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit() {}\r\n\r\n  onPin(id: any) {\r\n    this.onPinTask.emit(id);\r\n  }\r\n  onArchive(id: any) {\r\n    this.onArchiveTask.emit(id);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",

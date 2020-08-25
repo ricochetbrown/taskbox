@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "taskbox"
+    }
+  },
+  "defaultProject": "taskbox",
+  "cli": {
+    "analytics": "658a9619-ab8a-4f53-b09e-7ca478a4b663"
+  }
 }
