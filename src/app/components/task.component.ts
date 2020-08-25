@@ -13,7 +13,7 @@ import { Task } from '../models/task.model';
         />
         <span class="checkbox-custom" (click)="onArchive(task.id)"></span>
       </label>
-      <div class="title">
+      <div class="title" style="background: red">
         <input type="text" [value]="task?.title" readonly="true" placeholder="Input title" />
       </div>
       <div class="actions">
